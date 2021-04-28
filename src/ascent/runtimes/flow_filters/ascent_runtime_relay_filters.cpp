@@ -269,11 +269,15 @@ bool clean_mesh(const conduit::Node &data, conduit::Node &output)
     {
       conduit::Node info;
       const conduit::Node &child = data.child(i);
-      bool is_valid = blueprint::mesh::verify(child, info);
-      if(is_valid)
+      // lets make sure this isn't empty
+      if(child.number_of_children() > 0)
       {
-        conduit::Node &dest_dom = output.append();
-        dest_dom.set_external(child);
+        bool is_valid = blueprint::mesh::verify(child, info);
+        if(is_valid)
+        {
+          conduit::Node &dest_dom = output.append();
+          dest_dom.set_external(child);
+        }
       }
     }
   }
