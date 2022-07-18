@@ -40,7 +40,7 @@ https://github.com/Alpine-DAV/ascent/graphs/contributors
 
 
 License
-===========
+============
 
 Ascent is released under a BSD-style license - for detailed license info, refer to:
 
